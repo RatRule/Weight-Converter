@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Weight Converter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<style media="screen">
+body{
+  background:#333;
+}
+
+  .page-header{
+    margin-top: 5%;
+  }
+  #grams{
+    background-color: blue;
+    padding:30px;
+    color: white;
+    margin-top: -5px;
+  }
+  #kilograms{
+    background-color: green;
+    padding:30px;
+    color: white;
+    margin-top: -2px;
+  }
+  #ounces{
+    background-color:#e6005c;
+    padding:30px;
+    color: white;
+    margin-top: -2px;
+  }
+</style>
+
+<body>
+<header>
+  <h1 class='text-center page-header 'style="color:white"> WEIGHT CONVERTER </h1>
+</header>
+
+<div class="container">
+  <div class="row">
+  <div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
+
+  </div>
+
+  <div class="col-md-6">
+  <form class="form-group">
+    <input type="number" id="input" class="form-control" placeholder="Enter Pounds...">
+  </form>
+</div>
+
+<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
+</div>
+</div>
+
+<div id="output">
+<div class="row">
+<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3 ">
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+<h2 id="grams">Grams:</h2>
+</div>
+
+<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
+
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3 ">
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+<h2 id="kilograms">Kilograms:</h2>
+</div>
+
+<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
+
+</div>
+</div>
+
+<div class="row">
+<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3 ">
+
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+<h2  id="ounces">Ounces:</h2>
+</div>
+
+<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+<script>
+  document.getElementById('output').style.visibility="hidden";
+  var input=document.getElementById('input');
+  input.addEventListener('input', onInput);
+
+  function onInput(){
+    document.getElementById('output').style.visibility="visible";
+    var inputVal=document.getElementById('input').value;
+    console.log(inputVal);
+
+    document.getElementById('grams').innerHTML = "<h2>Grams:</h2>"+"<h4>"+inputVal/0.0022046+"</h4>";
+    document.getElementById('kilograms').innerHTML = "<h2>Kilograms:</h2>"+"<h4>"+inputVal/2.2046+"</h4>";
+    document.getElementById('ounces').innerHTML = "<h2>Ounces:</h2>"+"<h4>"+inputVal*16+"</h4>";
+
+  }
+
+</script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
